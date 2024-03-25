@@ -22,7 +22,7 @@ export default function QuickExitButton({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       className="ml-4 rounded-md bg-red-500 px-4 py-2 font-bold text-white"
     >
-      X
+      <code>x</code>
     </button>
   );
 }

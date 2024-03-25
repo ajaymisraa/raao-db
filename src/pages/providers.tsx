@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Provider } from '../interfaces';
+import HomeClientSection from "../app/client-components/HomeClientSection";
 
 export default function Providers() {
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -79,21 +80,24 @@ export default function Providers() {
     
 
   return (
-<div className="min-h-screen bg-black text-white">
+<div className="min-h-screen bg-black text-white flex flex-col">
 <nav className="bg-black-800 shadow py-6">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-center">
-        <div className="flex-shrink-0 flex items-center">
+      <div className="flex justify-between items-center">
+        <div className="flex-1"></div>
+        <div className="flex justify-center">
           <Link href="/" legacyBehavior>
             <img src="/transparent.png" alt="RAAO Logo" className="h-32" />
           </Link>
+        </div>
+        <div className="flex-1 flex justify-end">
+          <HomeClientSection />
         </div>
       </div>
     </div>
   </nav>
 
-
-<main className="py-10">
+  <main className="py-10 flex-grow overflow-y-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold mb-8">Providers</h1>
           <div className="lg:flex">
@@ -232,6 +236,14 @@ export default function Providers() {
     </div>
   </div>
 )}
+  <footer className="text-gray-500 py-4 text-sm backdrop-blur-md mt-auto">
+    <div className="container mx-auto text-center">
+      <p>
+        &copy; Copyright Rochester Asian American Organization LLC {new Date().getFullYear()}. All rights reserved.
+      </p>
+    </div>
+  </footer>
 </div>
+
   );
 }

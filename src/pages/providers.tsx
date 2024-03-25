@@ -135,29 +135,35 @@ export default function Providers() {
             <div className="lg:w-3/4">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredProviders.map((provider) => (
-                  <div
-                    key={provider._id}
-                    className="group rounded-lg border border-gray-700 bg-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-800 cursor-pointer"
-                    onClick={() => handleProviderClick(provider)}
-                  >
-                    <h2 className="text-xl font-semibold mb-3">
-                      {provider.name}{" "}
-                      <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                        -&gt;
-                      </span>
-                    </h2>
-                    <div className="relative mb-4">
-                      {provider.img && provider.img.length > 0 && (
-                        <img
-                          src={provider.img[currentImageIndex[provider._id] || 0]}
-                          alt={provider.name}
-                          className="w-full h-48 object-cover rounded-lg"
-                        />
-                      )}
-                    </div>
-                    <p className="text-gray-300 mb-4 text-sm opacity-50">{provider.desc.slice(0, 100)}</p>
-                    <p className="text-gray-300 text-sm opacity-50">{provider.other.slice(0, 100)}</p>
-                  </div>
+                 <div
+                 key={provider._id}
+                 className="group rounded-lg border border-gray-700 bg-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-800 cursor-pointer"
+                 onClick={() => handleProviderClick(provider)}
+               >
+                 <h2 className="text-xl font-semibold mb-3 truncate">
+                   {provider.name}{" "}
+                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                     -&gt;
+                   </span>
+                 </h2>
+                 <div className="relative mb-4 overflow-hidden">
+                   {provider.img && provider.img.length > 0 && (
+                     <img
+                       src={provider.img[currentImageIndex[provider._id] || 0]}
+                       alt={provider.name}
+                       className="w-full h-48 object-cover rounded-lg"
+                     />
+                   )}
+                 </div>
+                 <p className="text-gray-300 mb-4 text-sm opacity-50">
+                   {provider.desc.length > 150
+                     ? `${provider.desc.slice(0, 150)}...`
+                     : provider.desc}
+                 </p>
+                 <p className="text-gray-300 text-sm opacity-50 break-all">
+                   {provider.other}
+                 </p>
+               </div>
                 ))}
               </div>
             </div>
@@ -165,77 +171,110 @@ export default function Providers() {
         </div>
       </main>
 
-      {selectedProvider && (
-  <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md overflow-y-auto">
-    <div className="bg-gray-800 bg-opacity-80 rounded-lg p-6 max-w-4xl w-full mx-4 sm:mx-auto relative">
-      <button
-        className="absolute top-4 right-4 text-gray-300 hover:text-white focus:outline-none"
-        onClick={handleCloseModal}
+      {
+  selectedProvider && (
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md overflow-y-auto"
+      onClick={handleCloseModal}
+    >
+      <div
+        className="bg-gray-800 bg-opacity-80 rounded-lg p-6 max-w-4xl w-full mx-4 sm:mx-auto relative"
+        onClick={(e) => e.stopPropagation()}
       >
-        &times;
-      </button>
-      <h2 className="text-2xl font-bold mb-6">{selectedProvider.name}</h2>
-      <div className="mb-6">
-        <div className="relative">
-          {selectedProvider.img && selectedProvider.img.length > 0 && (
-            <img
-              src={selectedProvider.img[currentImageIndex[selectedProvider._id] || 0]}
-              alt={selectedProvider.name}
-              className="w-full h-64 object-cover rounded-lg mb-4"
-            />
-          )}
-          {selectedProvider.img && selectedProvider.img.length > 1 && (
-            <>
-              <button
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white px-2 py-1 rounded-full focus:outline-none"
-                onClick={() => handlePrevImage(selectedProvider._id)}
-                disabled={currentImageIndex[selectedProvider._id] === 0}
-              >
-                &lt;
-              </button>
-              <button
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white px-2 py-1 rounded-full focus:outline-none"
-                onClick={() => handleNextImage(selectedProvider._id, selectedProvider.img.length)}
-                disabled={currentImageIndex[selectedProvider._id] === selectedProvider.img.length - 1}
-              >
-                &gt;
-              </button>
-            </>
-          )}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">{selectedProvider.name}</h2>
+          <button
+            className="text-gray-300 hover:text-white focus:outline-none hidden sm:block"
+            onClick={handleCloseModal}
+          >
+            &times;
+          </button>
         </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="bg-gray-700 rounded-lg p-6">
-          <h3 className="text-lg font-bold mb-2">Description</h3>
-          <p className="text-gray-300">{selectedProvider.desc}</p>
-        </div>
-        <div className="bg-gray-700 rounded-lg p-6">
-          <h3 className="text-lg font-bold mb-2">Contact</h3>
-          <p>Phone: {selectedProvider.contact.phone}</p>
-          <p>Email: {selectedProvider.contact.email}</p>
-          <p>Address: {selectedProvider.contact.address}</p>
-        </div>
-        <div className="bg-gray-700 rounded-lg p-6">
-          <h3 className="text-lg font-bold mb-2">Tags</h3>
-          <div className="flex flex-wrap gap-2">
-            {selectedProvider.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-white"
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="mb-6 relative">
+          <div className="relative">
+            {selectedProvider.img && selectedProvider.img.length > 0 && (
+              <div className="w-full h-64 rounded-lg overflow-hidden">
+                <img
+                  src={selectedProvider.img[currentImageIndex[selectedProvider._id] || 0]}
+                  alt={selectedProvider.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            )}
+            {selectedProvider.img && selectedProvider.img.length > 1 && (
+              <>
+                <button
+                  className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white px-2 py-1 rounded-full focus:outline-none"
+                  onClick={() => handlePrevImage(selectedProvider._id)}
+                  disabled={currentImageIndex[selectedProvider._id] === 0}
+                >
+                  &lt;
+                </button>
+                <button
+                  className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 text-white px-2 py-1 rounded-full focus:outline-none"
+                  onClick={() => handleNextImage(selectedProvider._id, selectedProvider.img.length)}
+                  disabled={currentImageIndex[selectedProvider._id] === selectedProvider.img.length - 1}
+                >
+                  &gt;
+                </button>
+              </>
+            )}
+          </div>
+          <div className="flex sm:hidden justify-center mt-4">
+            <button
+              className="text-gray-300 hover:text-white focus:outline-none border border-gray-500 rounded-md px-4 py-2"
+              onClick={handleCloseModal}
+            >
+              Close
+            </button>
           </div>
         </div>
-        <div className="bg-gray-700 rounded-lg p-6">
-          <h3 className="text-lg font-bold mb-2">Other Information</h3>
-          <p className="text-gray-300">{selectedProvider.other}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="bg-gray-700 rounded-lg p-6">
+            <h3 className="text-lg font-bold mb-2">Description</h3>
+            <p className="text-gray-300">{selectedProvider.desc}</p>
+          </div>
+          <div className="bg-gray-700 rounded-lg p-6">
+            <h3 className="text-lg font-bold mb-2">Contact</h3>
+            <p>Phone: {selectedProvider.contact.phone}</p>
+            <p>Email: {selectedProvider.contact.email}</p>
+            <p>Address: {selectedProvider.contact.address}</p>
+          </div>
+          <div className="bg-gray-700 rounded-lg p-6">
+            <h3 className="text-lg font-bold mb-2">Tags</h3>
+            <div className="flex flex-wrap gap-2">
+              {selectedProvider.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-white"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="bg-gray-700 rounded-lg p-6">
+            <h3 className="text-lg font-bold mb-2">Other Information</h3>
+            <p className="text-gray-300">
+              {selectedProvider.other.startsWith('http') ? (
+                <a
+                  href={selectedProvider.other}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  {selectedProvider.other}
+                </a>
+              ) : (
+                selectedProvider.other
+              )}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-)}
+  )
+}
   <footer className="text-gray-500 py-4 text-sm backdrop-blur-md mt-auto">
     <div className="container mx-auto text-center">
       <p>

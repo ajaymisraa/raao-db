@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Provider } from '../interfaces';
 import HomeClientSection from "../app/client-components/HomeClientSection";
+import { Button, Page, Modal, Text, Input } from '@geist-ui/core'
 
 export default function Providers() {
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -101,7 +102,7 @@ export default function Providers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold mb-8">Providers</h1>
           <div className="lg:flex">
-            <div className="lg:w-1/4 lg:mr-8 mb-8 lg:mb-0">
+          <div className="lg:w-1/4 lg:mr-8 mb-8 lg:mb-0 lg:sticky lg:top-0 lg:self-start">
               <h2 className="text-xl font-bold mb-4">Filter by Tags</h2>
               <div className="flex flex-wrap gap-2">
                 {allTags.map((tag) => (
@@ -122,14 +123,15 @@ export default function Providers() {
                 <label htmlFor="search" className="block text-xl font-bold mb-2">
                   Search Providers
                 </label>
-                <input
-                  type="text"
-                  id="search"
-                  value={searchQuery}
-                  onChange={handleSearchQueryChange}
-                  placeholder="Search providers..."
-                  className="w-full px-4 py-2 bg-black text-white border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                <Input
+  id="search"
+  value={searchQuery}
+  onChange={handleSearchQueryChange}
+  placeholder="Search by zip code, keywords, etc..."
+  width="100%"
+  className="bg-black border border-gray-700 focus:ring-2 focus:ring-blue-500"
+  style={{ color: 'white' }}
+/>
               </div>
             </div>
             <div className="lg:w-3/4">

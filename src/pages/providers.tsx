@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Provider } from '../interfaces';
 import HomeClientSection from "../app/client-components/HomeClientSection";
-import { Button, Page, Modal, Text, Input } from '@geist-ui/core'
 
 export default function Providers() {
   const [providers, setProviders] = useState<Provider[]>([]);
@@ -123,15 +122,14 @@ export default function Providers() {
                 <label htmlFor="search" className="block text-xl font-bold mb-2">
                   Search Providers
                 </label>
-                <Input
-  id="search"
-  value={searchQuery}
-  onChange={handleSearchQueryChange}
-  placeholder="Search by zip code, keywords, etc..."
-  width="100%"
-  className="bg-black border border-gray-700 focus:ring-2 focus:ring-blue-500"
-  style={{ color: 'white' }}
-/>
+                <input
+                  type="text"
+                  id="search"
+                  value={searchQuery}
+                  onChange={handleSearchQueryChange}
+                  placeholder="Search providers..."
+                  className="w-full px-4 py-2 bg-black text-white border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
               </div>
             </div>
             <div className="lg:w-3/4">

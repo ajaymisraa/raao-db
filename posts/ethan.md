@@ -41,7 +41,11 @@ date: (Yep, this is a real submitted conversation.)
 # Introducing Ethan
 Ethan, an arbitrary name, meaning "firm", "strong", and "enduring"?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/).*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
 
-With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. 
+With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. Ethan is discrete, you can just put him in as a contact in your phone and it just looks like you are texting a friend.
+
+While our primary objective with Ethan is to provide a reliable companion, we also aim to alleviate the burden on traditional crisis support services like the 988 Suicide and Crisis Lifeline. By offering an accessible, always-available option for initial support and triage, Ethan can provide immediate emotional support to individuals who may be hesitant to call a crisis line, help filter and prioritize cases, potentially reducing the volume of non-emergency calls to 988, offer personalized coping strategies and resources for those dealing with milder forms of distress, act as a bridge to professional help when necessary, facilitating warm handoffs to human crisis counselors, and collect anonymized data on mental health trends to inform better resource allocation and intervention strategies. 
+
+Through these mechanisms, Ethan can complement existing mental health infrastructure, allowing human crisis counselors to focus their expertise on the most critical cases while ensuring that a wider range of individuals receive some form of support.
 
 There are three main parts of how Ethan works, shown in the simplified diagram below: Reference and Background, Conversation, and Referral and Action. 
 
@@ -52,6 +56,16 @@ Using another model made by Rochester Asian American Organization, we develop a 
 
 ### Conversation
 Conversation is releatively straight-forward but contains the core of what Ethan excels at. First, we prompt the user, asking the user questions. If the user starts the conversation, this step is skipped. Then, after sentiment analysis, another one of our models trained from similar weights of papers in emotionally conscious fields?[*[CARER: Contextualized Affect Representations for Emotion Recognition](https://aclanthology.org/D18-1404/), [DeepEmo: Learning and Enriching Pattern-Based Emotion Representations](https://paperswithcode.com/paper/deepemo-learning-and-enriching-pattern-based), [EmotionX-IDEA: Emotion BERT – an Affectional Model for Conversation](https://ar5iv.labs.arxiv.org/html/1908.06264) -- We are still learning so much on this. As time progresses, we will add to this list to advance our model and what we know as researchers.*], we perform a language assessment (look below at Language Prompting). After generating a fitting response, we apply our user-custom model to modify our target response for to a more suitable response - one that sounds like your friend would write - and send the response out. 
+
+We are experimenting with active recall -- the model remembering activities and logging them for future recall to engage in active conversations.
+
+:::model-example
+input: how was that baseball game last night? 
+output: dude it was so sick
+input: how were the seats??
+date: (Result from testing-phase analysis. Example of recall.)
+:::
+
 
 ### Referral and Action
 If sentiment analysis triggers a positive risk factor, we refer you to one of the providers gathered in the reference step. As a fallback, we always recommend calling, or by default forwarding you to, the National Suicide Hotline. 
@@ -77,19 +91,64 @@ At each step after tokenization (where the initial phrase is broken up for easy 
 We plan on open sourcing this algorithm on Github in the coming months. When we do so, we will release an announcement and update this article.
 
 # Safety
-...
+Safety is our top priority in developing and deploying Ethan. We've implemented multiple layers of protection to ensure user wellbeing and data security.
+
 ## Storing Data
-...
+Ethan operates on a zero-retention policy for conversation data. All messages are processed in real-time and immediately discarded after generating a response. No chat logs or message histories are stored on our servers. Messages and data stored in "memory" are converted to tensors (string of numbers) and no conversational privacy data is stored in memory. These tensors are exclusively used to fine tune our model. In the case of a referral being needed, assumptions and diagnostics that are sent to the referrer are based off of the conversation that occured in the past 24 hours and inference predictions made off of said tensors. This approach ensures maximum privacy and minimizes the risk of data breaches.
+
+We do maintain anonymized metadata for service improvement and research purposes. This includes aggregate statistics on usage patterns, response times, and general conversation topics, but nothing that could identify individual users or conversations. All data, including the minimal information we do retain, is encrypted using state-of-the-art encryption protocols. We employ end-to-end encryption for all communications, ensuring that even in the unlikely event of a breach, the data remains unreadable and secure.
+
 ## What We Collect
-...
+The only personal information we collect is:
+Phone number (for message routing), Approximate location (city/state level, for local resource referrals), User-provided demographic info (optional, for tailoring responses), Tensorized memory, and a 24-hour chat history.
+
+This minimal data collection allows us to provide a personalized experience while maintaining strong privacy protections.
+
+It's crucial to emphasize that we never share any user information with third parties under any circumstances. Your data remains strictly within our secure systems and is used solely for the purpose of providing and improving the Ethan service.
+
 ## False Negatives
-...
+One of the most critical safety considerations for Ethan is avoiding false negatives - instances where the system fails to identify a user in crisis who needs immediate intervention. As we are still in beta phase, this process may be subject to change. To mitigate this risk, we've implemented a multi-tiered approach:
+
+1. **Sentiment Analysis:** Our advanced natural language processing continuously monitors conversations for indicators of distress or crisis, even if not explicitly stated.
+
+2. **Keyword Triggers:** Certain high-risk words or phrases automatically elevate the conversation for human review.
+
+3. **Pattern Recognition:** Ethan tracks conversation patterns over time to identify subtle shifts that may indicate declining mental health.
+
+4. **Conservative Threshold:** Our system err on the side of caution, with a low threshold for triggering interventions or referrals.
+
+5. **Human Oversight:** A team of trained mental health professionals monitors flagged conversations in real-time, ready to intervene if necessary.
+
+6. **Regular Audits:** We conduct frequent reviews of conversations marked as "low risk" to ensure no warning signs are being missed.
+
+7. **Continuous Learning:** The system is constantly updated based on new research and real-world performance data to improve its ability to identify at-risk individuals.
+
+While no system is perfect, these layered safeguards significantly reduce the risk of missing a user in crisis. We're committed to ongoing refinement and improvement of these safety measures.
 
 # Release
 Our aim is to release a reliable model of Ethan for public use by August 18, 2024. This is an ambition goal. It's key to note that our main mission is model safety. We want a reliable and safe model to ship to production, not some half-hearted recommendation algorithm that we have seen with a few too many large companies. 
 
 ## Scalability and Future
-...
+As Ethan evolves, we're committed to expanding its reach and capabilities while maintaining our core ethical principles.
+
+We focus in on five main components for this: Technological Expansion, Broadening Access, Enhanced Capabilities, Collaboriative Growth, and Ethical Commitment. 
+
+### Technological Expansion
+Althought we currently use a cloud-native architecture for seamless scaling and distributed processing to handle millions of concurrent conversations, as funding increases, we plan on implementing a CI/CD pipeline for rapid deployement of improvements.
+
+### Broadening Access
+Our main horizon is multilingual support, specifically focused on Spanish, Mandarin, and Hinti within the first year. This includes cultural adaptation and training the model for global use and different cultures. We aspire to be able to integrate with popular messaging platforms and dedicated mobile apps in the near future, too.
+
+### Enhanced Capabilities
+We aim to get more engineers working on Ethan and other RAAO projects in the near future for continuous refinement for better understanding and responses. In the future, we aim to have increased personalization while maintaining privacy and, ideally, explore multimodal support (voice, image recognition, etc.). 
+
+### Collaborative Growth
+We aim to grow our partnerships with local and mental health organizations and healthcare providers for a larger reach. Additionally, assist with ongoing research initiatives in AI-assisted mental support applications, and open-sourcing select components to foster innovation.
+
+### Ethical Commitment
+We want to expand our unwavering focus on user privacy and data security, de-mystifying AI processes and limitations, including maintaining human oversight in critical situations. One of the most important goals from Ethan is commitmenet to accessibility regardless of socioeconomic status.
+
+As we scale, our goal remains constant: leveraging technology to provide accessible, effective mental health support to millions worldwide. We'll continue to adapt based on user feedback and evolving mental health needs, always prioritizing ethical considerations in our growth strategy.
 
 If you believe in Rochester Asian American Organization's mission, please consider donations to help fuel our cause. 
 
@@ -98,14 +157,15 @@ If you believe in Rochester Asian American Organization's mission, please consid
 ### References
 :::footnotes-section:::
 
+
+---
+
 ### Acknowledgements and Contributions
 All code, article modules, and models for this project were developed by Ajay Misra under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
 
 Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
 
 All outputs, including but not limited to Ethan, from Rochester Asian American Organization, LLC are protected under U.S. and international intellectual property laws (17 U.S.C. §§ 101 et seq., 15 U.S.C. §§ 1051 et seq., 35 U.S.C. §§ 1 et seq.). Unauthorized use, reproduction, distribution, or modification is strictly prohibited and may result in legal action. For permissions or licensing, contact Rochester Asian American Organization, LLC at (507) 990-2942. 
-
----
 
 ##
 *For more information on Ethan and other initiatives by the Rochester Asian American Organization, visit our website or contact us directly.*

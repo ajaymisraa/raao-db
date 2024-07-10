@@ -84,7 +84,7 @@ date: (Result from testing-phase analysis.)
 :::
 
 ### Language Scoring
-In the example above, the model interprets the use case of the curse word given the surrounding context, logs the capability to memory, and satirically responds.
+In the example above, the model interprets the use case of the curse word given the surrounding context -- similar to how an encoder and decoder model works --, logs the capability to memory, and satirically responds.
 
 <img src="/l2.png" alt="Language Example" width="1000" style="text-align: center;" />
 

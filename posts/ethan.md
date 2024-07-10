@@ -1,6 +1,6 @@
 ---
 title: 'Introducing Ethan: An Innovative Approach to High-Demand Mental Health Support'
-date: '07/01/2024'
+date: '07/10/2024'
 author: 'Ajay Misra'
 tags: ['Mental Health', 'AI', 'Community Support']
 ---

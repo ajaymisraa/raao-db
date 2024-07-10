@@ -103,7 +103,7 @@ All code, article modules, and models for this project were developed by Ajay Mi
 
 Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
 
-All outputs produced by Rochester Asian American Organization, LLC, including but not limited to Ethan, are protected under applicable intellectual property laws, including copyright, trademark, and patent laws. Unauthorized use, reproduction, distribution, or modification of these materials is strictly prohibited and may result in legal action. For permissions or licensing inquiries, please contact Rochester Asian American Organization, LLC directly.
+All outputs, including but not limited to Ethan, from Rochester Asian American Organization, LLC are protected under U.S. and international intellectual property laws (17 U.S.C. §§ 101 et seq., 15 U.S.C. §§ 1051 et seq., 35 U.S.C. §§ 1 et seq.). Unauthorized use, reproduction, distribution, or modification is strictly prohibited and may result in legal action. For permissions or licensing, contact Rochester Asian American Organization, LLC at (507) 990-2942. 
 
 ---
 

@@ -88,6 +88,9 @@ We plan on open sourcing this algorithm on Github in the coming months. When we 
 # Release
 Our aim is to release a reliable model of Ethan for public use by August 18, 2024. This is an ambition goal. It's key to note that our main mission is model safety. We want a reliable and safe model to ship to production, not some half-hearted recommendation algorithm that we have seen with a few too many large companies. 
 
+## Scalability and Future
+...
+
 If you believe in Rochester Asian American Organization's mission, please consider donations to help fuel our cause. 
 
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Introducing Ethan: An Innovative Approach to High-Demand Mental Health Support'
-date: '07/10/2024'
+date: '07/01/2024'
 author: 'Ajay Misra'
 tags: ['Mental Health', 'AI', 'Community Support']
 ---
@@ -69,6 +69,8 @@ date: (Result from testing-phase analysis. Example of recall.)
 
 ### Referral and Action
 If sentiment analysis triggers a positive risk factor, we refer you to one of the providers gathered in the reference step. As a fallback, we always recommend calling, or by default forwarding you to, the National Suicide Hotline. 
+
+We'd like to reiterate that Ethan *is not* an alternative or replacement for serious mental health help. We, instead, want to complement the present systems.
 
 ## Language Prompting
 As Ethan learns, he adapts his language to fit yours. We developed Languge Scoring, a model designed to rate inputted language to ascertain tone, mood, language and other factors. 

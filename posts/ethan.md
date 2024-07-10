@@ -1,66 +1,108 @@
 ---
-title: 'Introducing Ethan'
-date: '2023-07-03'
+title: 'Introducing Ethan: An Innovative Approach to High-Demand Mental Health Support'
+date: '07/01/2024'
 author: 'Ajay Misra'
 tags: ['Mental Health', 'AI', 'Community Support']
 ---
 
-# Introducing Ethan: Rochester Asian American Organization's Innovative AI Companion
-
-Mental health remains a critical issue, especially among men who are often hesitant to seek help due to societal stigmas. In response to this challenge, the Rochester Asian American Organization (RAAO) is proud to announce the launch of **Ethan**, an AI-powered application designed to provide seamless, approachable mental health support.
-
-## What is Ethan?
-
-Ethan is an AI companion that you can text, designed to mimic the experience of chatting with a friend. This unique approach aims to make mental health support more appealing to men, who are statistically less likely to use traditional helplines. By branding Ethan as just another contact in your phone, we hope to remove the barriers that prevent people from reaching out for help.
-
-## How Does Ethan Work?
-
-Ethan operates as a large language model (LLM) trained to provide professional-level support. The model is designed to understand and respond to a wide range of conversational inputs, making the interaction feel natural and engaging. 
-
-### Example Interaction
+### Trigger Warning
+This article discusses topics related to suicide, suicidal ideation, self-harm, and mental health issues. The content may be distressing or triggering for some readers. If you or someone you know is struggling with these issues, please consider seeking support from a mental health professional or reaching out to a trusted person in your life.
 
 :::model-example
-  input: Bro, my drink got roofied last night methinks.
-  output: Bro, that really sucks, I'm sorry to hear that. Here's some advice on what you should do next...
+date: Friday 10:32 AM
+output: Hey man can you talk
+date: Friday 6:41 PM
+input: poker tn?
+output: Nah don't really feel up for it
+date: Yesterday 5:32 PM
+output: What's up man u free to talk?
+date: (Yep, this is a real submitted conversation.)
 :::
 
-Ethan's responses are crafted to sound like a friend, while also providing actionable advice and support. This seamless integration helps in alleviating the pressure on call centers and suicide hotlines by handling most of the traffic automatically, while still ensuring that users get the necessary support.
+## Background
 
-## Technical Details
+The demand for suicide hotlines has surged significantly, highlighting the immense pressure on these services to manage the overwhelming volume. Since its launch in July 2022, the 988 Suicide and Crisis Lifeline has handled over 5.5 million contacts, illustrating the critical need for mental health support ?[*[Health.mil](https://health.mil/News/Dvids-Articles/2023/11/10/news457600)*] ?[*[NYU](https://publichealth.nyu.edu/events-news/news/2023/11/29/988-suicide-crisis-lifeline-opportunities-and-challenges)*]. In Arizona, transitioning to the 988 hotline resulted in a 45% increase in call volume, with about 5,000 calls monthly, showcasing the strain on crisis intervention resources ?[*[12News](https://www.12news.com/article/news/local/988-hotline-takes-60000-calls-first-year/75-5c79b28e-219d-4e1d-9145-8e215556c6af)*].
 
-### Natural Language Processing
+Men, in particular, face significant challenges in seeking mental health support due to societal stigma and expectations of self-reliance, further complicating the ability of hotlines to scale effectively. This stigma often prevents men from reaching out, exacerbating the pressure on already overwhelmed crisis services.
 
-Ethan leverages state-of-the-art natural language processing (NLP) techniques to understand the context and sentiment of the user's messages. The model is fine-tuned on a diverse dataset to recognize and respond to various conversational cues.
+On a personal note, as an 18-year-old male, I've witnessed this reality firsthand. Despite being active and fun-loving, many of my close friends have confided in me that they've considered suicide (in most cases, I learned about this months after the fact). I know several that have been physically abused, drugged or "roofied", among other terrible things. Sadly, they avoid seeking help due to fear of ostracization and stigma. I wish I could say that my story is an outlier, but it's far from unique. According to the World Health Organization (WHO)?[*[WHO](https://www.who.int/news-room/fact-sheets/detail/suicide)*], suicide is the second leading cause of death among 15-to-29-year-olds globally. The American Foundation for Suicide Prevention (AFSP)?[*[AFSP](https://afsp.org/get-help/)*] reports that men die by suicide 3.63 times more often than women. Despite these alarming numbers, many men don't seek help. A study published in the Journal of Health Psychology?[*[NIH](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6560805/)*] found that men are significantly less likely than women to seek help for mental health issues, with 60% of men citing fears of being perceived as weak.
 
-### Sentiment Analysis
+Addressing this problem requires promoting open conversations about mental health and encouraging men to seek help without fear of judgment. Yet, very little infrastructure is set up to promote these conversations, and, unfortunately, fewer men are receptive to listen to these tough conversations. Although vital strides have been taken to encourage mental health support, the stigma against support, especially for men, causes many demographics to feel alone in one of the most challenging battles they will face. 
 
-Sentiment analysis is a critical component of Ethan's functionality. By analyzing the emotional tone of messages, Ethan can determine the appropriate level of response and whether to escalate the conversation to a human professional. For instance, if a user's messages indicate severe distress, Ethan will seamlessly transition the conversation to a trained professional at a hotline.
+June is Men's Mental Health, so I am glad that we are announcing Ethan on July 1st. 
 
 :::model-example
-  input: I'm feeling really down and don't know what to do.
-  output: I'm sorry to hear that you're feeling this way. It's important to talk to someone who can help. Let me connect you with a professional.
+date: Today 2:32 AM
+output: wish i wasn't born
+input: happens
+date: (Yep, this is a real submitted conversation.)
 :::
 
-### Contextual Understanding
+# Introducing Ethan
+Ethan, an arbitrary name, meaning "firm", "strong", and "enduring"?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/).*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
 
-Ethan is designed to maintain context over the course of a conversation, allowing it to provide more personalized and relevant responses. This is achieved through advanced machine learning algorithms that track the flow of conversation and recall previous interactions.
+With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. 
 
-### Scalability
+There are three main parts of how Ethan works, shown in the simplified diagram below: Reference and Background, Conversation, and Referral and Action. 
 
-One of the key advantages of Ethan is its scalability. By automating initial interactions, Ethan can handle a large volume of conversations simultaneously, reducing the burden on human call centers and enabling quicker responses for those in need.
+<img src="/ethan-fc.png" alt="Ethan FC" style="width: 100%; height: auto;">
 
-## The Impact and Vision
+### Reference and Background
+Using another model made by Rochester Asian American Organization, we develop a list of mental health resources and providers in your local area and nation-wide reliable resources before anything happens. This model and it's partnerships will be announced in the coming weeks. Additionally, we scraped hundreds of hours of suicide prevention intervention transcripts, additional local referral protocals generated by our models, among other resources that the model can use, to gear Ethan for what it needs to do his job. This makes up the "base model".
 
-The development of Ethan is deeply personal for us at RAAO. Many of our friends and community members have struggled with mental health issues, often too afraid to seek help. Stories like that of Anthony Preznal, who attempted suicide twice during his senior year and only received the necessary support after an extended hospital stay, underline the urgent need for accessible mental health resources.
+### Conversation
+Conversation is releatively straight-forward but contains the core of what Ethan excels at. First, we prompt the user, asking the user questions. If the user starts the conversation, this step is skipped. Then, after sentiment analysis, another one of our models trained from similar weights of papers in emotionally conscious fields?[*[CARER: Contextualized Affect Representations for Emotion Recognition](https://aclanthology.org/D18-1404/), [DeepEmo: Learning and Enriching Pattern-Based Emotion Representations](https://paperswithcode.com/paper/deepemo-learning-and-enriching-pattern-based), [EmotionX-IDEA: Emotion BERT – an Affectional Model for Conversation](https://ar5iv.labs.arxiv.org/html/1908.06264) -- We are still learning so much on this. As time progresses, we will add to this list to advance our model and what we know as researchers.*], we perform a language assessment (look below at Language Prompting). After generating a fitting response, we apply our user-custom model to modify our target response for to a more suitable response - one that sounds like your friend would write - and send the response out. 
 
-Ethan is our solution to this problem. By making mental health support as easy as texting a friend, we hope to reach those who might otherwise suffer in silence.
+### Referral and Action
+If sentiment analysis triggers a positive risk factor, we refer you to one of the providers gathered in the reference step. As a fallback, we always recommend calling, or by default forwarding you to, the National Suicide Hotline. 
 
-## Conclusion
+## Language Prompting
+As Ethan learns, he adapts his language to fit yours. We developed Languge Scoring, a model designed to rate inputted language to ascertain tone, mood, language and other factors. 
 
-Ethan is more than just an AI application; it is a lifeline for those who need it most. By integrating advanced AI with the familiar experience of texting a friend, Ethan represents a significant step forward in making mental health support accessible and stigma-free. We are excited to see the positive impact Ethan will have on our community and beyond.
+:::model-example
+output: how have we been man
+input: honestly not too bad, had some ups and downs today, but heads high right now
+output: hopefully not too much fuckin around?
+input: not as much as i'd like, wouldnt hurt to fuck around more often
+date: (Result from testing-phase analysis.)
+:::
+
+### Language Scoring
+In the example above, the model interprets the use case of the curse word given the surrounding context, logs the capability to memory, and satirically responds.
+
+<img src="/l2.png" alt="Language Example" width="1000" style="text-align: center;" />
+
+At each step after tokenization (where the initial phrase is broken up for easy interpretability by the model) and safety checks, the language is holistically viewed and interpreted for future conversational use, to understand motives behind language, and to assess overall mood of what the sender is trying to convey. We studied several papers ?[*[CARER: Contextualized Affect Representations for Emotion Recognition](https://aclanthology.org/D18-1404/), [DeepEmo: Learning and Enriching Pattern-Based Emotion Representations](https://paperswithcode.com/paper/deepemo-learning-and-enriching-pattern-based), [EmotionX-IDEA: Emotion BERT – an Affectional Model for Conversation](https://ar5iv.labs.arxiv.org/html/1908.06264) -- We are still learning so much on this. As time progresses, we will add to this list to advance our model and what we know as researchers.*] (and we are still learning!) to fine tune this algorithm. 
+
+We plan on open sourcing this algorithm on Github in the coming months. When we do so, we will release an announcement and update this article.
+
+# Safety
+...
+## Storing Data
+...
+## What We Collect
+...
+## False Negatives
+...
+
+# Release
+Our aim is to release a reliable model of Ethan for public use by August 18, 2024. This is an ambition goal. It's key to note that our main mission is model safety. We want a reliable and safe model to ship to production, not some half-hearted recommendation algorithm that we have seen with a few too many large companies. 
+
+If you believe in Rochester Asian American Organization's mission, please consider donations to help fuel our cause. 
 
 ---
 
+### References
+:::footnotes-section:::
+
+### Contributions
+All code, article modules, and models for this project were developed by Ajay Misra under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
+
+Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
+
+---
+
+##
 *For more information on Ethan and other initiatives by the Rochester Asian American Organization, visit our website or contact us directly.*
 
-- [Rochester Asian American Organization](https://www.rochester-aao.org/)
+- [Rochester Asian American Organization](https://www.rochaao.org/)

@@ -98,11 +98,12 @@ If you believe in Rochester Asian American Organization's mission, please consid
 ### References
 :::footnotes-section:::
 
-### Contributions
+### Acknowledgements and Contributions
 All code, article modules, and models for this project were developed by Ajay Misra under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
 
 Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
 
+All outputs produced by Rochester Asian American Organization, LLC, including but not limited to Ethan, are protected under applicable intellectual property laws, including copyright, trademark, and patent laws. Unauthorized use, reproduction, distribution, or modification of these materials is strictly prohibited and may result in legal action. For permissions or licensing inquiries, please contact Rochester Asian American Organization, LLC directly.
 ---
 
 ##

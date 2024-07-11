@@ -39,7 +39,7 @@ date: (Yep, this is a real submitted conversation.)
 :::
 
 # Introducing Ethan
-Ethan, an arbitrary name, meaning "firm", "strong", and "enduring"?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/). We plan to switch to a version of a secure [Claude Sonnet 3.5](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3) model in the near future.*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
+Ethan, an arbitrary name, meaning "firm", "strong", and "enduring" in Hebrew?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/). We plan to switch to a version of a secure [Claude Sonnet 3.5](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3) model in the near future.*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
 
 With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. Ethan is discrete, you can just put him in as a contact in your phone and it just looks like you are texting a friend.
 
@@ -133,26 +133,22 @@ Our aim is to release a reliable model of Ethan for public use by August 18, 202
 ## Scalability and Future
 As Ethan evolves, we're committed to expanding its reach and capabilities while maintaining our core ethical principles.
 
-We focus in on five main components for this: Technological Expansion, Broadening Access, Enhanced Capabilities, Collaboriative Growth, and Ethical Commitment. 
-
-### Technological Expansion
+### 1. Technological Expansion
 Althought we currently use a cloud-native architecture for seamless scaling and distributed processing to handle millions of concurrent conversations, as funding increases, we plan on implementing a CI/CD pipeline for rapid deployement of improvements. As we increase funding, we plan on switching over from Llama 3 70B to a pretrained model of Claude 3.5 sonnet through [AWS Bedrock](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3).
 
-### Broadening Access
+### 2. Broadening Access
 Our main horizon is multilingual support, specifically focused on Spanish, Mandarin, and Hinti within the first year. This includes cultural adaptation and training the model for global use and different cultures. We aspire to be able to integrate with popular messaging platforms and dedicated mobile apps in the near future, too.
 
-### Enhanced Capabilities
+### 3. Enhanced Capabilities
 We aim to get more engineers working on Ethan and other RAAO projects in the near future for continuous refinement for better understanding and responses. In the future, we aim to have increased personalization while maintaining privacy and, ideally, explore multimodal support (voice, image recognition, etc.). 
 
-### Collaborative Growth
+### 4. Collaborative Growth
 We aim to grow our partnerships with local and mental health organizations and healthcare providers for a larger reach. Additionally, assist with ongoing research initiatives in AI-assisted mental support applications, and open-sourcing select components to foster innovation.
 
-### Ethical Commitment
+### 5. Ethical Commitment
 We want to expand our unwavering focus on user privacy and data security, de-mystifying AI processes and limitations, including maintaining human oversight in critical situations. One of the most important goals from Ethan is commitmenet to accessibility regardless of socioeconomic status.
 
 As we scale, our goal remains constant: leveraging technology to provide accessible, effective mental health support to millions worldwide. We'll continue to adapt based on user feedback and evolving mental health needs, always prioritizing ethical considerations in our growth strategy.
-
-If you believe in Rochester Asian American Organization's mission, please consider donations to help fuel our cause. 
 
 ---
 
@@ -166,6 +162,8 @@ If you believe in Rochester Asian American Organization's mission, please consid
 All code, article modules, and models for this project were developed by Ajay Misra under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
 
 Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
+
+If you believe in Rochester Asian American Organization's mission, please consider donating to help fuel our cause. 
 
 All outputs, including but not limited to Ethan, from Rochester Asian American Organization, LLC are protected under U.S. and international intellectual property laws (17 U.S.C. §§ 101 et seq., 15 U.S.C. §§ 1051 et seq., 35 U.S.C. §§ 1 et seq.). Unauthorized use, reproduction, distribution, or modification is strictly prohibited and may result in legal action. For permissions or licensing, contact Rochester Asian American Organization, LLC at (507) 990-2942. 
 

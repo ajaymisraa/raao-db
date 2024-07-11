@@ -39,7 +39,7 @@ date: (Yep, this is a real submitted conversation.)
 :::
 
 # Introducing Ethan
-Ethan, an arbitrary name, meaning "firm", "strong", and "enduring"?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/).*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
+Ethan, an arbitrary name, meaning "firm", "strong", and "enduring"?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/). We plan to switch to a version of a secure [Claude Sonnet 3.5](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3) model in the near future.*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
 
 With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. Ethan is discrete, you can just put him in as a contact in your phone and it just looks like you are texting a friend.
 
@@ -136,7 +136,7 @@ As Ethan evolves, we're committed to expanding its reach and capabilities while 
 We focus in on five main components for this: Technological Expansion, Broadening Access, Enhanced Capabilities, Collaboriative Growth, and Ethical Commitment. 
 
 ### Technological Expansion
-Althought we currently use a cloud-native architecture for seamless scaling and distributed processing to handle millions of concurrent conversations, as funding increases, we plan on implementing a CI/CD pipeline for rapid deployement of improvements.
+Althought we currently use a cloud-native architecture for seamless scaling and distributed processing to handle millions of concurrent conversations, as funding increases, we plan on implementing a CI/CD pipeline for rapid deployement of improvements. As we increase funding, we plan on switching over from Llama 3 70B to a pretrained model of Claude 3.5 sonnet through [AWS Bedrock](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3).
 
 ### Broadening Access
 Our main horizon is multilingual support, specifically focused on Spanish, Mandarin, and Hinti within the first year. This includes cultural adaptation and training the model for global use and different cultures. We aspire to be able to integrate with popular messaging platforms and dedicated mobile apps in the near future, too.

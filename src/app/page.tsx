@@ -45,19 +45,19 @@ export default function Home() {
 
         
         <a
-          href="/"
+          href="/posts/ethan"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Data{" "}
+            Ethan{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            How do we aquire, clean, and analyze data? Learn more about our data process.
+            A mental health companion providing resources, support, and guidance. Designed, built, and maintained by RAAO.
           </p>
         </a>
 
@@ -74,12 +74,12 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            250+ resources. A mental health database curated, developed, and maintained by RAAO.
+            The largest mental health database in the midwest - curated, developed, and maintained by RAAO.
           </p>
         </a>
 
         <a
-          href="/"
+          href="/posts/purpose"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -91,12 +91,12 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore what we do and why we do it. Learn more about our mission and vision.
+            Explore what we do, why we do it, and how we safely do it. Learn more about our mission, how we handle data, and security.
           </p>
         </a>
 
         <a
-          href="/"
+          href="mailto:ajaymisra1@outlook.com"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -120,7 +120,9 @@ export default function Home() {
     <footer className="text-gray-500 py-4 text-sm">
         <div className="container mx-auto">
           <div className="flex justify-center">
-            <div
+            
+          {/*
+          <div
               className="w-full max-w-[550px] relative lg:w-80 xl:w-96 cursor-pointer"
             >
               <input
@@ -150,6 +152,9 @@ export default function Home() {
                 </svg>
               </div>
             </div>
+          */}
+          
+            
           </div>
           <div className="text-center mt-4">
             <p>

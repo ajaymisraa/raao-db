@@ -1,93 +1,33 @@
 ---
 title: 'The Formation of Rochester Asian American Organization'
 date: '2023-07-04'
-author: 'Ajay Misra & Darian Du'
+author: 'Ajay Misra'
 tags: []
 ---
 
-# The Impact of Asian American Organizations on Community Empowerment
+## Our Roots
+There are so many 501(c)(3)'s - let alone non-profit organizations - in the world. All of them doing incredible things. 
 
-Asian American organizations play a crucial role in empowering their communities. This post explores the various ways these organizations contribute to social, cultural, and political advancement.
+Rochester Asian American Organization (RAAO) started as a small high school club with around 35 members, aiming to educate students about Asian culture and address the negative stigma towards minority groups, particularly the AAPI community. We hosted Mayo High School's first Holi celebration, which attracted over 50 participants, and organized other cultural events. As we grew, we established RAAO chapters in other schools across the county.
 
-## Historical Context
+Darian, the co-founder, and I wanted to expand further. We partnered with the City of Rochester and the University of Minnesota to direct LinkBRT, a proposed 2.3-mile transit route in Rochester, MN, focusing on diversity. We also created RAAO Stories, interviewing local businesses to highlight family-owned and AAPI businesses and document the unique challenges faced by small business owners.
 
-The roots of Asian American community organizations can be traced back to the mid-20th century. Some key milestones include:
+However, we realized that there were only two of us, and making a significant impact is challenging for just two high schoolers. Unlike larger organizations like Feeding America, the Red Cross, and Habitat for Humanity, which have extensive resources and reach, our capacity was limited. Nonetheless, our dedication and efforts laid a strong foundation for future growth and impact.
 
-- 1960s: Formation of the Asian American Political Alliance
-- 1970s: Emergence of Asian American studies programs in universities
-- 1980s: Increase in pan-Asian advocacy groups
+## Our New Ideas and Technical Focus
 
-## Key Areas of Impact
+Recently, we have shifted RAAO’s focus towards technology.
 
-2. For model examples:
+I've been passionate about computer science for a long time. Whether it's developing computer vision AI applications, reverse engineering Google's ReCAPTCHA algorithms, or building toolkits to generate practice tests for Chemistry, I love to apply technology wherever possible.
 
-<ModelExample
-  input="What is the capital of France?"
-  output="The capital of France is Paris."
-/>
+I wanted to bring this passion to RAAO. By integrating my technical skills with our mission, I realized we could broaden our impact and support communities that often go unnoticed or lack resources. This transformation allows us to create innovative solutions and provide more substantial support to smaller communities that deserve more recognition and assistance.
 
-2. For model examples:
+We envision using technology to bridge gaps in education, mental health, and community engagement. For instance, we are developing [**Ethan**](/posts/ethan), an AI-powered mental health support application designed to offer immediate assistance to those in need. Additionally, we are working on educational tools that can help students from underrepresented backgrounds excel in STEM fields.
 
-:::model-example
-input: What is the capital of France?
-output: The capital of France is Paris.
-:::
+We want to work with existing organizations whos missions align with our own to further our goals. We are building the [largest mental health database in the midwest](/providers) -- backed by [Rochester Community Initiative's](https://www.rochinitiative.org/) survey data -- to deliver resources to communities that need it. We'd love to partner with other organizations, so please, don't hesitate to [reach out](mailto:ajaymisra1@outlook.com).
 
+Our goal is to use technology to empower and uplift marginalized communities, ensuring they have access to the same opportunities and resources as larger, more recognized groups. By doing so, we aim to create a more inclusive and supportive environment for everyone.
 
-### 1. Cultural Preservation
+Despite still being a small 501(c)(3), we aim to use technology to apply to larger groups of people while still providing dedicated support to those who need. 
 
-Asian American organizations often focus on preserving and celebrating cultural heritage. This includes:
-
-- Organizing cultural festivals
-- Offering language classes
-- Maintaining community centers
-
-### 2. Political Advocacy
-
-Many organizations work towards increasing political representation and addressing policy issues. Examples include:
-
-- Voter registration drives
-- Lobbying for immigration reform
-- Promoting Asian American candidates for public office
-
-### 3. Social Services
-
-Organizations provide vital services to community members, such as:
-
-- Mental health resources
-- Job training programs
-- Legal aid for immigrants
-
-## Case Study: Rochester Asian American Organization
-
-The Rochester Asian American Organization (RAAO) exemplifies the multifaceted approach of modern Asian American organizations:
-
-1. **Community Building**: RAAO hosts regular events to bring the community together.
-2. **Education**: They provide resources on Asian American history and current issues.
-3. **Advocacy**: RAAO works with local government to address community concerns.
-
-## Challenges and Future Directions
-
-Despite their significant impact, Asian American organizations face several challenges:
-
-- Securing sustainable funding
-- Addressing the diverse needs of a heterogeneous community
-- Combating the "model minority" myth
-
-Moving forward, organizations are focusing on:
-
-1. Building coalitions with other minority groups
-2. Leveraging technology for broader outreach
-3. Developing leadership among younger generations
-
-## Conclusion
-
-Asian American organizations continue to be vital pillars of support and empowerment for their communities. By addressing cultural, political, and social needs, these organizations play a crucial role in shaping the Asian American experience and contributing to the broader tapestry of American society.
-
----
-
-*For more information on Asian American organizations and their impact, check out these resources:*
-
-- [Asian American Advancing Justice](https://www.advancingjustice-aajc.org/)
-- [National Council of Asian Pacific Americans](https://www.ncapaonline.org/)
-- [Asian American Studies Now](https://www.amazon.com/Asian-American-Studies-Now-Critical/dp/0813545757)
+If you are interested in helping our mission, please [consider donating](mailto:ajaymisra1@outlook.com). 

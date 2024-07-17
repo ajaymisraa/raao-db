@@ -45,6 +45,16 @@ interface Footnote {
   text: string;
 }
 
+interface PhotoData {
+  src: string;
+  caption: string;
+}
+
+interface PhotoCarouselProps {
+  photos: PhotoData[];
+  height: number;
+}
+
 const ModelExample = ({ exchanges }: { exchanges: Exchange[] }) => {
   const [isClient, setIsClient] = useState(false);
 
@@ -76,10 +86,57 @@ const ModelExample = ({ exchanges }: { exchanges: Exchange[] }) => {
   );
 };
 
+const PhotoCarousel = ({ photos, height }: PhotoCarouselProps) => {
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
+  };
+
+  return (
+    <div className="relative w-full max-w-2xl mx-auto my-8">
+      <div style={{ height: `${height}px` }} className="relative">
+        <Image
+          src={photos[currentPhotoIndex].src}
+          alt={photos[currentPhotoIndex].caption}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+        />
+        <button
+          onClick={prevPhoto}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
+        >
+          &#8249;
+        </button>
+        <button
+          onClick={nextPhoto}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
+        >
+          &#8250;
+        </button>
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full">
+          {currentPhotoIndex + 1} / {photos.length}
+        </div>
+      </div>
+      {photos[currentPhotoIndex].caption && (
+        <div className="mt-2 text-center text-gray-300">
+          {photos[currentPhotoIndex].caption}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const processContent = (content: string) => {
   const modelExampleRegex = /:::model-example\s*([\s\S]*?):::/g;
   const footnoteRegex = /\?\[\*([\s\S]*?)\*\]/g;
   const footnotesSectionRegex = /:::footnotes-section:::/g;
+  const photosRegex = /:::photos\s*([\s\S]*?):::/g;
   let lastIndex = 0;
   const parts: Array<string | JSX.Element> = [];
   const footnotes: Footnote[] = [];
@@ -130,21 +187,39 @@ const processContent = (content: string) => {
       });
   };
 
+  const processPhotos = (photoContent: string) => {
+    const lines = photoContent.split('\n').filter(line => line.trim() !== '');
+    const height = parseInt(lines[0].split(':')[1].trim()) || 400; // Default height if not specified
+    const photos: PhotoData[] = [];
+    
+    for (let i = 1; i < lines.length; i += 2) {
+      const photoSrc = lines[i].split(':')[1].trim().replace(/['"]/g, '');
+      const caption = i + 1 < lines.length ? lines[i + 1].split(':')[1].trim() : '';
+      photos.push({ src: photoSrc, caption });
+    }
+    
+    return <PhotoCarousel key={`photo-carousel-${lastIndex}`} photos={photos} height={height} />;
+  };
+
   let match;
-  while ((match = modelExampleRegex.exec(content)) !== null) {
+  while ((match = modelExampleRegex.exec(content)) !== null || (match = photosRegex.exec(content)) !== null) {
     if (match.index > lastIndex) {
       parts.push(processFootnotes(content.slice(lastIndex, match.index)));
     }
 
-    const exchanges: Exchange[] = processExchanges(match[1]);
+    if (match[0].startsWith(':::model-example')) {
+      const exchanges: Exchange[] = processExchanges(match[1]);
+      parts.push(
+        <ModelExample
+          key={match.index}
+          exchanges={exchanges}
+        />
+      );
+    } else if (match[0].startsWith(':::photos')) {
+      parts.push(processPhotos(match[1]));
+    }
 
-    parts.push(
-      <ModelExample
-        key={match.index}
-        exchanges={exchanges}
-      />
-    );
-    lastIndex = modelExampleRegex.lastIndex;
+    lastIndex = match.index + match[0].length;
   }
 
   // Process remaining content

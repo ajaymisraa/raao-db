@@ -1,5 +1,8 @@
+// File: /Users/sxm20/Desktop/edugen/raao-db/src/pages/posts/[id].tsx
+
 import React, { ComponentType, useEffect, useState, ReactNode } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,29 +13,54 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Node } from 'unist';
 
+const DynamicModelExample = dynamic(() => import('../components/ModelExample'), {
+  loading: () => <p>Loading model example...</p>,
+});
 
+const DynamicPhotoCarousel = dynamic(() => import('../components/PhotoCarousel'), {
+  loading: () => <p>Loading photo carousel...</p>,
+});
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params || !params.id) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const postData = await getPostData(params.id as string);
-  return {
-    props: {
-      postData,
-    },
-  };
+const MarkdownComponents: Partial<Components> = {
+  h1: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-white" {...props} />,
+  h2: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-white" {...props} />,
+  h3: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h3 className="text-xl font-medium mt-4 mb-2 text-white" {...props} />,
+  p: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <p className="mb-4" {...props}>{children}</p>,
+  strong: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <strong {...props}>{children}</strong>,
+  em: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <em {...props}>{children}</em>,
+  a: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <a className="text-blue-400 hover:underline" {...props}>{children}</a>,
+  img: ({ node, ...props }: { node?: Node; [key: string]: any }) => {
+    return (
+      <Image
+        src={props.src || ''}
+        alt={props.alt || ''}
+        width={parseInt(props.width || '1000', 10)}
+        height={parseInt(props.height || '400', 10)}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+        }}
+        className="rounded-lg"
+      />
+    );
+  },
+  code: ({ node, inline, className, children, ...props }: { node?: Node; inline?: boolean; className?: string; children?: ReactNode; [key: string]: any }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={atomDark}
+        language={match[1]}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
 };
 
 interface Exchange {
@@ -49,88 +77,6 @@ interface PhotoData {
   src: string;
   caption: string;
 }
-
-interface PhotoCarouselProps {
-  photos: PhotoData[];
-  height: number;
-}
-
-const ModelExample = ({ exchanges }: { exchanges: Exchange[] }) => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
-
-  return (
-    <div className="imessage">
-      {exchanges.map((exchange, index) => {
-        if (exchange.type === 'date') {
-          return (
-            <div key={index} className="date-container">
-              <span className="date-heading">{exchange.content}</span>
-            </div>
-          );
-        }
-        return (
-          <p key={index} className={exchange.type === 'input' ? 'from-them' : 'from-me'}>
-            <span dangerouslySetInnerHTML={{ __html: exchange.content }} />
-          </p>
-        );
-      })}
-    </div>
-  );
-};
-
-const PhotoCarousel = ({ photos, height }: PhotoCarouselProps) => {
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-
-  const nextPhoto = () => {
-    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
-  };
-
-  const prevPhoto = () => {
-    setCurrentPhotoIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
-  };
-
-  return (
-    <div className="relative w-full max-w-2xl mx-auto my-8">
-      <div style={{ height: `${height}px` }} className="relative">
-        <Image
-          src={photos[currentPhotoIndex].src}
-          alt={photos[currentPhotoIndex].caption}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-        <button
-          onClick={prevPhoto}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
-        >
-          &#8249;
-        </button>
-        <button
-          onClick={nextPhoto}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
-        >
-          &#8250;
-        </button>
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full">
-          {currentPhotoIndex + 1} / {photos.length}
-        </div>
-      </div>
-      {photos[currentPhotoIndex].caption && (
-        <div className="mt-2 text-center text-gray-300">
-          {photos[currentPhotoIndex].caption}
-        </div>
-      )}
-    </div>
-  );
-};
 
 const processContent = (content: string) => {
   const modelExampleRegex = /:::model-example\s*([\s\S]*?):::/g;
@@ -198,7 +144,7 @@ const processContent = (content: string) => {
       photos.push({ src: photoSrc, caption });
     }
     
-    return <PhotoCarousel key={`photo-carousel-${lastIndex}`} photos={photos} height={height} />;
+    return <DynamicPhotoCarousel key={`photo-carousel-${lastIndex}`} photos={photos} height={height} />;
   };
 
   let match;
@@ -210,7 +156,7 @@ const processContent = (content: string) => {
     if (match[0].startsWith(':::model-example')) {
       const exchanges: Exchange[] = processExchanges(match[1]);
       parts.push(
-        <ModelExample
+        <DynamicModelExample
           key={match.index}
           exchanges={exchanges}
         />
@@ -248,48 +194,6 @@ const processContent = (content: string) => {
   }
 
   return parts;
-};
-
-const MarkdownComponents: Partial<Components> = {
-  h1: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-white" {...props} />,
-  h2: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-white" {...props} />,
-  h3: ({ node, ...props }: { node?: Node; [key: string]: any }) => <h3 className="text-xl font-medium mt-4 mb-2 text-white" {...props} />,
-  p: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <p className="mb-4" {...props}>{children}</p>,
-  strong: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <strong {...props}>{children}</strong>,
-  em: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <em {...props}>{children}</em>,
-  a: ({ node, children, ...props }: { node?: Node; children?: ReactNode; [key: string]: any }) => <a className="text-blue-400 hover:underline" {...props}>{children}</a>,
-  img: ({ node, ...props }: { node?: Node; [key: string]: any }) => {
-    return (
-      <Image
-        src={props.src || ''}
-        alt={props.alt || ''}
-        width={parseInt(props.width || '1000', 10)}
-        height={parseInt(props.height || '400', 10)}
-        style={{
-          maxWidth: '100%',
-          height: 'auto',
-        }}
-        className="rounded-lg"
-      />
-    );
-  },
-  code: ({ node, inline, className, children, ...props }: { node?: Node; inline?: boolean; className?: string; children?: ReactNode; [key: string]: any }) => {
-    const match = /language-(\w+)/.exec(className || '');
-    return !inline && match ? (
-      <SyntaxHighlighter
-        style={atomDark}
-        language={match[1]}
-        PreTag="div"
-        {...props}
-      >
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
-    ) : (
-      <code className={className} {...props}>
-        {children}
-      </code>
-    );
-  },
 };
 
 export default function Post({ postData }: { postData: PostData }) {
@@ -459,7 +363,6 @@ export default function Post({ postData }: { postData: PostData }) {
         `}</style>
       </Head>
 
-      
       <main className="flex-grow flex flex-col items-center justify-center p-8">
         <div className="max-w-4xl w-full flex flex-col items-center">
           <div className="mb-8">
@@ -522,3 +425,26 @@ export default function Post({ postData }: { postData: PostData }) {
     </div>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  if (!params || !params.id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const postData = await getPostData(params.id as string);
+  return {
+    props: {
+      postData,
+    },
+  };
+};

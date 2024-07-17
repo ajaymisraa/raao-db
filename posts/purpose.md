@@ -1,5 +1,5 @@
 ---
-title: 'Purpose Statement'
+title: 'Our Purpose'
 date: '2023-07-04'
 author: 'Ajay Misra'
 tags: []
@@ -61,6 +61,11 @@ Our data collection practices vary project to project and are specified on their
 We also use security measures such as sentiment analysis, keyword triggers, pattern recognition, conservative thresholds, human oversight, regular audits, and continous learning for our system to stay as up-to-date, secure, and safe as possible. 
 
 We never share user information with third parties. Data remains within our secure systems. Users are informed about data collection and use. Consent is obtained before any data processing. Users are fully aware and agree to our data handling practices.
+
+### Other Safety Features
+We recognize the scrutiny and stigma often associated with mental health applications. To address this, we have implemented a discreet exit feature on our sites and subdomains. At any time, you can press "x" on your keyboard or click the large red button in the top right corner to be immediately redirected to a random, inconspicuous website. This action will also remove RAAO from your browser history, ensuring it does not appear when you use the back arrow to navigate to previous sites.
+
+If you have suggestions for any other safety features to put on our website, please let us know. 
 
 ## Miscellaneous Information
 

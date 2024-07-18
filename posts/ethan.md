@@ -39,7 +39,7 @@ date: (Yep, this is a real submitted conversation.)
 :::
 
 # Introducing Ethan
-Ethan, an arbitrary name, meaning "firm", "strong", and "enduring" in Hebrew?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/). We plan to switch to a version of a secure [Claude Sonnet 3.5](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3) model in the near future.*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
+Ethan, an arbitrary name, meaning "firm", "strong", and "enduring" in Hebrew?[*RAAO has no religious affiliation, [we found](https://en.wikipedia.org/wiki/Ethan_(given_name)) Ethan a common name and our intention is to resonate with as many people as possible.*], is a large language model (LLM)?[*We built Ethan off of a fine tuned and heavily modified version of [Llama 3 70B](https://llama.meta.com/llama3/). We plan to switch to a version of a secure AWS [Claude Sonnet 3.5](https://aws.amazon.com/bedrock/claude/?sec=bcomfai&pos=3) dedicated instance  in the near future.*], similar to ChatGPT, that uses a safe practices designed to be a discrete, reliable, and emotionally compenent companion. 
 
 With Ethan, users can simply just text his phone number and, as you converse, Ethan develops a profile of each user. Whether Ethan's just someone you want to talk to about life, distressed, or otherwise. He is a safe support friend trained on hundreds of hours of suicide prevention intervention transcripts, mental health resources and providers, and other local referral protocals. Ethan is discrete, you can just put him in as a contact in your phone and it just looks like you are texting a friend.
 
@@ -159,7 +159,7 @@ As we scale, our goal remains constant: leveraging technology to provide accessi
 ---
 
 ### Acknowledgements and Contributions
-All code, article modules, and models for this project were developed by Ajay Misra under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
+All code, article modules, and models for this project were developed by [Ajay Misra](https://ajaymisra.com) under Rochester Asian American Organization, LLC.- a 501(c)(3) non-profit organization. 
 
 Thank you Matt Smith -- we modified his [CodePen](https://codepen.io/AllThingsSmitty/pen/jommGQ) for our article's iMessage components.
 

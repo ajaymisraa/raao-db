@@ -27,9 +27,7 @@ Men, in particular, face significant challenges in seeking mental health support
 
 On a personal note, as an 18-year-old male, I've witnessed this reality firsthand. Despite being active and fun-loving, many of my close friends have confided in me that they've considered suicide (in most cases, I learned about this months after the fact). I know several that have been physically abused, drugged or "roofied", among other terrible things. Sadly, they avoid seeking help due to fear of ostracization and stigma. I wish I could say that my story is an outlier, but it's far from unique. According to the World Health Organization (WHO)?[*[WHO](https://www.who.int/news-room/fact-sheets/detail/suicide)*], suicide is the second leading cause of death among 15-to-29-year-olds globally. The American Foundation for Suicide Prevention (AFSP)?[*[AFSP](https://afsp.org/get-help/)*] reports that men die by suicide 3.63 times more often than women. Despite these alarming numbers, many men don't seek help. A study published in the Journal of Health Psychology?[*[NIH](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6560805/)*] found that men are significantly less likely than women to seek help for mental health issues, with 60% of men citing fears of being perceived as weak.
 
-Addressing this problem requires promoting open conversations about mental health and encouraging men to seek help without fear of judgment. Yet, very little infrastructure is set up to promote these conversations, and, unfortunately, fewer men are receptive to listen to these tough conversations. Although vital strides have been taken to encourage mental health support, the stigma against support, especially for men, causes many demographics to feel alone in one of the most challenging battles they will face. 
-
-June is Men's Mental Health, so I am glad that we are announcing Ethan on July 1st. 
+Addressing this problem requires promoting open conversations about mental health and encouraging men to seek help without fear of judgment. Yet, very little infrastructure is set up to promote these conversations, and, unfortunately, fewer men are receptive to listen to these tough conversations. Although vital strides have been taken to encourage mental health support, the stigma against support, especially for men, causes many demographics to feel alone in one of the most challenging battles they will face.
 
 :::model-example
 date: Today 2:32 AM
@@ -47,7 +45,7 @@ While our primary objective with Ethan is to provide a reliable companion, we al
 
 Through these mechanisms, Ethan can complement existing mental health infrastructure, allowing human crisis counselors to focus their expertise on the most critical cases while ensuring that a wider range of individuals receive some form of support.
 
-There are three main parts of how Ethan works, shown in the simplified diagram below: Reference and Background, Conversation, and Referral and Action. 
+There are three main parts of how Ethan works, shown in the simplified diagram below.
 
 <img src="/ethan-fc.png" alt="Ethan FC" style="width: 100%; height: auto;">
 
@@ -91,6 +89,14 @@ In the example above, the model interprets the use case of the curse word given 
 At each step after tokenization (where the initial phrase is broken up for easy interpretability by the model) and safety checks, the language is holistically viewed and interpreted for future conversational use, to understand motives behind language, and to assess overall mood of what the sender is trying to convey. We studied several papers ?[*[CARER: Contextualized Affect Representations for Emotion Recognition](https://aclanthology.org/D18-1404/), [DeepEmo: Learning and Enriching Pattern-Based Emotion Representations](https://paperswithcode.com/paper/deepemo-learning-and-enriching-pattern-based), [EmotionX-IDEA: Emotion BERT – an Affectional Model for Conversation](https://ar5iv.labs.arxiv.org/html/1908.06264) -- We are still learning so much on this. As time progresses, we will add to this list to advance our model and what we know as researchers.*] (and we are still learning!) to fine tune this algorithm. 
 
 We plan on open sourcing this algorithm on Github in the coming months. When we do so, we will release an announcement and update this article.
+
+# Pricing and Execution
+Rochester Asian American Organization (RAAO) is a recognized 501(c)(3) non-profit organization committed to creating and providing top-tier, accessible resources. Our flagship initiative, Ethan, exemplifies this mission. Ethan, along with our other projects, possesses inherent scalability that allows for significant impact without the need for immediate funding.
+
+Nevertheless, we recognize that as our initiatives grow, financial constraints will inevitably arise. To address this, RAAO has established a dedicated grant-writing and fundraising team. These teams work tirelessly to secure funds through grant applications, public donations, and university-sponsored funding campaigns.
+
+In alignment with our mission, we are committed to ensuring that Ethan remains freely accessible to the public once it is validated as a stable and production-ready product. Through our strategic planning and community support, we are confident in our ability to sustain and expand our initiatives, continuing to serve and benefit the public effectively.
+
 
 # Safety
 Safety is our top priority in developing and deploying Ethan. We've implemented multiple layers of protection to ensure user wellbeing and data security.

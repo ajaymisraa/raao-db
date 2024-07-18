@@ -1,7 +1,7 @@
 ---
 title: 'Introducing Ethan: An Innovative Approach to High-Demand Mental Health Support'
 date: '07/01/2024'
-author: 'Ajay Misra'
+author: 'Ajay Misra & The RAAO Development Team'
 tags: ['Mental Health', 'AI', 'Community Support']
 ---
 

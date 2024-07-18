@@ -95,8 +95,15 @@ Rochester Asian American Organization (RAAO) is a recognized 501(c)(3) non-profi
 
 Nevertheless, we recognize that as our initiatives grow, financial constraints will inevitably arise. To address this, RAAO has established a dedicated grant-writing and fundraising team. These teams work tirelessly to secure funds through grant applications, public donations, and university-sponsored funding campaigns.
 
-In alignment with our mission, we are committed to ensuring that Ethan remains freely accessible to the public once it is validated as a stable and production-ready product. Through our strategic planning and community support, we are confident in our ability to sustain and expand our initiatives, continuing to serve and benefit the public effectively.
+To reiterate, **Ethan will be a free to use service.**
 
+RAAO typically incurs no expenses for data acquisition, as we utilize survey results from our partner organizations. Currently, I personally fund our development team, a short-term expense that ensures RAAO remains debt-free, a principle we intend to uphold indefinitely.
+
+Our in-house development of AI models eliminates the need for expensive licenses. Additionally, all our servers are either dedicated or owned by RAAO and are managed by our team, which significantly reduces operational costs. We are steadfast in our commitment to development for social good, a guiding principle that drives all our actions and initiatives at RAAO.
+
+In alignment with [our mission](/posts/purpose), we are committed to ensuring that Ethan remains freely accessible to the public once it is validated as a stable and production-ready product. Through our strategic planning and community support, we are confident in our ability to sustain and expand our initiatives, continuing to serve and benefit the public effectively.
+
+As previously stated, our objective is to open-source critical components of Ethan, enabling public access and fostering community-driven model and code improvements. By collaborating with other non-profit organizations and companies, we aim to reduce the costs associated with enhancing our models. This initiative will be executed with a strong emphasis on safety and security, ensuring that all implementations adhere to the highest standards of protection and integrity.
 
 # Safety
 Safety is our top priority in developing and deploying Ethan. We've implemented multiple layers of protection to ensure user wellbeing and data security.

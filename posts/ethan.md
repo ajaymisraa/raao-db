@@ -45,6 +45,16 @@ While our primary objective with Ethan is to provide a reliable companion, we al
 
 Through these mechanisms, Ethan can complement existing mental health infrastructure, allowing human crisis counselors to focus their expertise on the most critical cases while ensuring that a wider range of individuals receive some form of support.
 
+Ethan represents a innovative approach to supporting young adult mental health and well-being. While initially focused on suicide prevention, Ethan's capabilities extend to address a wide range of challenges faced by individuals aged 13-26. These include mental health issues like depression and anxiety, substance abuse, pornographic abuse, social and relationship challenges, academic and career stress, and physical health concerns. By analyzing cleaned data such as anonymized therapy sessions, personal experiences shared in forums, and expert resources, Ethan provides personalized insights and coping strategies.
+
+The AI is designed to be a compassionate guide through various life challenges, from building social skills to managing academic pressure and exploring career options. Ethan also addresses crucial life skills such as financial management and digital well-being. In the realm of physical health, it offers guidance on fitness, nutrition, and sleep hygiene, recognizing the strong connection between physical and mental well-being.
+
+Importantly, Ethan maintains a focus on user privacy and ethical data use. All information is rigorously anonymized and secured. By offering an accessible, always-available option for initial support and triage, Ethan aims to complement existing mental health services, allowing human crisis counselors to focus on the most critical cases while ensuring a wider range of individuals receive some form of support.
+
+We emphasize that the point of Ethan is not to replace critical providers nor are we proposing an AI solution for serious mental health concerns. Ethan is designed to compliment existing infrastructure.
+
+Prior to production, we invite our models to subject to verification by independent security researchers. 
+
 There are three main parts of how Ethan works, shown in the simplified diagram below.
 
 <img src="/ethan-fc.png" alt="Ethan FC" style="width: 100%; height: auto;">

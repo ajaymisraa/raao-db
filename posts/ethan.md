@@ -56,6 +56,7 @@ We emphasize that the point of **Ethan is not to replace critical providers nor 
 
 Prior to production, we invite our models to subject to verification by independent security researchers. 
 
+# Our Model
 There are three main parts of how Ethan works, shown in the simplified diagram below.
 
 <img src="/ethan-fc.png" alt="Ethan FC" style="width: 100%; height: auto;">
